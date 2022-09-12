@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'TraceFood.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'TraceFood',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://vguerraz:TwD374X@cluster0.ieqcc.mongodb.net/test'
+        }
     }
 }
 
