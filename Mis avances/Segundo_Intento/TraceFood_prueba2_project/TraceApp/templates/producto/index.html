@@ -1,0 +1,113 @@
+<!-- Mostrar -->
+{% extends "pages/base.html" %}
+
+{% block title %} Lista de reces y productos {% endblock %}
+
+{% block contenido %}
+<!-- RECES -->
+
+<form action = "">
+   <div class="mb-3">
+     <label for="buscarProducto" class="form-label">
+         Buscar: 
+      </label>
+     <input type="text" class="form-control" name="buscarProducto">
+   </div>
+
+</br>
+
+<div class="card">
+   <div class="card-header">
+      Información de reces
+   </div>
+   <div class="card-body">
+      <h4 class="card-title">Reces</h4>
+
+      
+      <table class="table">
+         <thead>
+            <tr>
+                  <th>Res ID</th>
+                  <th>Peso</th> 
+                  <th>Estado</th>
+                  <th>Productos relacionados</th>
+                  <th>Trazabilidad</th>
+                  <th>Comentarios</th>
+            </tr>
+         </thead>
+         <!--   <tbody>
+               <tr class="">
+                  <td scope="row">R1C1</td>
+                  <td>R1C2</td>
+                  <td>R1C3</td>
+               </tr>
+               <tr class="">
+                  <td scope="row">Item</td>
+                  <td>Item</td>
+                  <td>Item</td>
+               </tr>
+            </tbody> -->
+      </table>
+   
+      
+   </div>
+<!--   <div class="card-footer text-muted">
+      Footer
+   </div> -->
+</div>
+
+</br>
+</br>
+
+
+<!-- PRODUCTOS -->
+<div class="card">
+   <div class="card-header">
+      Información de productos
+   </div>
+   <div class="card-body">
+      <h4 class="card-title">Productos</h4>
+      
+      <table class="table">
+         <thead>
+            <tr>
+               <th>Producto ID</th>
+               <th>Peso</th> 
+               <th>Estado</th>
+               <th>Corte</th>
+               <th>QR</th>
+               <th>Trazabilidad</th>
+               <th>Comentarios</th>
+            </tr>
+         </thead>
+         <!--   <tbody>
+               <tr class="">
+                  <td scope="row">R1C1</td>
+                  <td>R1C2</td>
+                  <td>R1C3</td>
+               </tr>
+               <tr class="">
+                  <td scope="row">Item</td>
+                  <td>Item</td>
+                  <td>Item</td>
+               </tr>
+            </tbody> -->
+      </table>
+
+   </div>
+<!--   <div class="card-footer text-muted">
+      Footer
+   </div> -->
+</div>
+
+</br>
+</br>
+
+<!--<a name="" id="" class="btn btn-primary" href="#" role="button">Button</a> -->
+<a class="btn btn-primary" href="{% url 'producto_agregar' %}" role="button">Agregar producto</a>
+<a class="btn btn-primary" href="{% url 'producto_editar' %}" role="button">Editar producto</a>
+
+{% endblock %}
+
+
+

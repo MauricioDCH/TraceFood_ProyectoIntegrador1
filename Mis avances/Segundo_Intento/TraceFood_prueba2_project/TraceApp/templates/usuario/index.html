@@ -1,0 +1,77 @@
+<!-- Mostrar -->
+{% extends "pages/base.html" %}
+
+{% block title %} Lista de usuarios {% endblock %}
+
+{% block contenido %}
+<!-- RECES -->
+
+<form action = "">
+   <div class="mb-3">
+     <label for="buscarProducto" class="form-label">
+         Buscar: 
+      </label>
+     <input type="text" class="form-control" name="buscarProducto">
+   </div>
+
+</br>
+
+<div class="card">
+   <div class="card-header">
+      Información de usuarios
+   </div>
+   <div class="card-body">
+      <h4 class="card-title">Usuarios</h4>
+
+      
+      <table class="table">
+         <thead>
+            <tr>
+                  <th>Usuario ID</th>
+                  <th>Rol</th> 
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Correo</th>
+                  <th>Telefono</th>
+                  <th>Dirección</th>
+                  <th>Municipio</th> 
+                  <th>Departamento</th>
+                  <th>Pais</th>
+                  <th>Certificaciones</th>
+            </tr>
+         </thead>
+         <!--   <tbody>
+               <tr class="">
+                  <td scope="row">R1C1</td>
+                  <td>R1C2</td>
+                  <td>R1C3</td>
+               </tr>
+               <tr class="">
+                  <td scope="row">Item</td>
+                  <td>Item</td>
+                  <td>Item</td>
+               </tr>
+            </tbody> -->
+      </table>
+   
+      
+   </div>
+<!--   <div class="card-footer text-muted">
+      Footer
+   </div> -->
+</div>
+
+</br>
+</br>
+
+
+
+
+</br>
+</br>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,5 @@
+1. Quitar fecha de muerte del registro de reces y procedencia, pues es una actualización
+2. Cambiar la forma en la que se almacenan los datos de trazabilidad.
+3. QR NO esta en la base de datos por el momento
+4. Es posible hacer que rol_id sea una constante y al mismo tiempo primary????
+5.LA tabla producto se emppieza a lllenar en la planta de desposte
