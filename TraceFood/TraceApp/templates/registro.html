@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block contenido %}
+
+<form class='form' method = 'POST' action = ''>
+   {% csrf_token %}
+   {{ form.as_p}}
+
+   <input class="btn btn-lg btn-danger" type="submit" name = 'crear_usuario'></input>
+</form>
+
+
+
+
+
+
+{% endblock %}

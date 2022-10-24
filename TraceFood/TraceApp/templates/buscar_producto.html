@@ -34,9 +34,9 @@
          <h2>This is the full home page</h2> -->
          <form action = "">
             <div class="mb-3">
-              <label for="productoBuscado" class="form-label">
+              <label for="search" class="form-label">
                </label>
-              <input type="text" class="form-control" placeholder = "Digite el código de su producto" name="productoBuscado" >
+              <input type="text" class="form-control" placeholder = "Digite el código de su producto" name="search" >
               <br/>
               <button type="submit" class="btn btn-success btn-block text-white">Buscar </button>
             </div>
@@ -63,7 +63,7 @@
                <ul>
                   {% for p in productos %}
                   <tr>
-                  <td>{{p.id_producto}}</td>
+                  <td>{{p.id}}</td>
                   <td>{{p.parte}}</td>
                   <td><a href = "{% url 'escanear_producto' %}" class= "btn btn-info">Ver información</a></td>
                   </tr>
