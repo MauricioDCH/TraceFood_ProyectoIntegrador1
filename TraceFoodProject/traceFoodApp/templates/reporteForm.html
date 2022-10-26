@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aplicacion</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/materia/bootstrap.min.css">
+    </head>
+    <body>
+        <!-- barra de navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger"> 
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="/" style=" margin-right:5px; margin-left:5px;"> < </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand" align="left" style=" margin-right:5px; margin-left:5px;"> Reportar producto </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <table class="table table-bordered table-hover" align="center" border="1" style="width:1000px; height:50px; margin-top:5px;" bgcolor="#EDEDED">
+            <thead></thead>
+            <tbody>
+                    <tr>
+                        <td><form method="POST">
+                            <div class="col-sm-10">
+                                <label for="id_producto" class="form-label mt-4">ID del producto</label>
+                                <input type="text" id="id_producto" name="id_producto" placeholder="Ingrese el ID del producto" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_res" class="form-label mt-4">¿</label>
+                                <input type="text" id="id_res" name="id_res" placeholder="ID Res" class="form-control" autofocus value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_producto" class="form-label mt-4">ID del Producto</label>
+                                <input type="text" id="id_producto" name="id_producto" placeholder="ID Producto" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_recepcion" class="form-label mt-4">Fecha de recepcion</label>
+                                <input type="date" id="fecha_recepcion" name="fecha_recepcion" placeholder="dd/mm/aaaa">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion_recepcion" class="form-label mt-4">Direccion de recepcion</label>
+                                <input type="text" id="direccion_recepcion" name="direccion_recepcion" placeholder="Direccion de recepcion" class="form-control" autofocus>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="temperatura" class="form-label mt-4">Temperatura</label>
+                                <input type="number" id="temperatura" name="temperatura" placeholder="Temperatura" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="estado" class="form-label mt-4">Estado</label>
+                                <input type="text" id="estado" name="estado" placeholder="Estado" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="comentarios" class="form-label mt-4">Comentarios</label>
+                                <input type="text" id="comentarios" name="comentarios" placeholder="Comentarios" class="form-control" autofocus>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Guardar Res</button>
+                            <button type="reset" class="btn btn-danger">Cancelar</button>
+                        </form></td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </body>
+</html>

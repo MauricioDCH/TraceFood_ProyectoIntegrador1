@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aplicacion</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/materia/bootstrap.min.css">
+    </head>
+    <body>
+        <!-- barra de navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger"> 
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="/" style=" margin-right:5px; margin-left:5px;"> < </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="/" align="left" style=" margin-right:5px; margin-left:5px;"> Registro de productores </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <table class="table table-bordered table-hover" align="center" border="1" style="width:1000px; height:50px; margin-top:5px;" bgcolor="#EDEDED">
+            <thead></thead>
+            <tbody>
+                    <tr>
+                        <td><form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="nombre" class="form-label mt-4">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre empresa" class="form-control" autofocus>
+                            </div>
+                            <div class="col-sm-10">
+                                <label for="nit" class="form-label mt-4">NIT</label>
+                                <input type="number" id="nit" name="nit" placeholder="NIT de la empresa" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="form-label mt-4">Correo</label>
+                                <input type="email" id="correo" name="correo" placeholder="Correo empresa" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero_contacto" class="form-label mt-4">Numero de contacto</label>
+                                <input type="number" id="numero_contacto" name="numero_contacto" placeholder="Numero de contacto" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="form-label mt-4">Direccion</label>
+                                <input type="text" id="direccion" name="direccion" placeholder="Direccion empresa" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="municipio" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Municipio</font></font></label>
+                                <select class="form-select" id="municipio">
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Abejorral</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Alejandría</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Amagá</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Amalfi</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Andes</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Angelópolis</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apartadó</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arboletes</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Argelia</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Armenia</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Barbosa</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bello</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Belmira</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Briceño</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carepa</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caucasia</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chigorodó</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cisneros</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cocorná</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copacabana</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Donmatías</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Girardota</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Liborina</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Medellin</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Venecia</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Yarumal</font></font></option>
+                                </select>
+                            </div>
+                            <!--<div class="form-group">
+                                <label for="exampleTextarea" class="form-label mt-4">Municipio</label>
+                                <input type="text" name="municipio" placeholder="Municipio" class="form-control" autofocus>
+                            </div>-->
+                            <div class="form-group">
+                                <label for="departamento" class="form-label mt-4">Departamento</label>
+                                <input type="text" id="departamento" name="departamento" placeholder="Departamento" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="pais" class="form-label mt-4">Pais</label>
+                                <input type="text" id="pais" name="pais" placeholder="Pais" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="certificaciones" class="form-label mt-4">Certificaciones</label>
+                                <input type="text" id="certificaciones" name="certificaciones" placeholder="Certificaciones" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="rol" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rol</font></font></label>
+                                <select class="form-select" id="rol">
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Granja</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Matadero</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Planta de desposte</font></font></option>
+                                  <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Distribuidor</font></font></option>
+                                </select>
+                            </div>
+                            <!--<div class="form-group">
+                                <label for="exampleSelect1" class="form-label mt-4">Rol</label>
+                                <input type="text" name="rol" placeholder="Rol" class="form-control" autofocus>
+                            </div>-->
+                            <br>
+                            <button type="submit" class="btn btn-primary">Guardar Registro</button>
+                            <button type="reset" class="btn btn-danger">Cancelar</button>
+                        </form></td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </body>
+</html>
