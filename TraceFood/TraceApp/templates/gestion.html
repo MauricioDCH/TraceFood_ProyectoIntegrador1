@@ -5,26 +5,7 @@
 {% block contenido %}
 
 <div class = "row">
-   <div class = "col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
-   <h5><strong>BUSCAR POR QR</strong></h5> 
-      <div class ="card">
-         <div class= "card-body">
-            <form action="" method = "POST">
-               
-               <img src="img/vaquita.jpg" alt="">
-               <img class="card-img-top"  src= './vaquita.jpg' />
-
-               <div class = "form-group">
-                  <a href="{% url 'escanear_producto' %}" class="btn btn-dark btn-block text-white"> Escanear</a>
-            
-               </div>  
-            </form> 
-         </div>
-      </div>
-   
-   </div>
-
-   
+ 
 
 
    <div class = "col-sm-12 col-md-6 col-lg-8 col-xl-8 ">
@@ -51,14 +32,14 @@
 
 
 
-      <h3><strong>PRODUCTOS</strong></h3>
+      <h3><strong>INFORMACIÓN DE PRODUCTOS</strong></h3>
       <div class = "table-responsive py-2 ">
          <table class = "table table-striped" >
             <caption> Productos...</caption>
             <thead>
                <th>Producto ID</th>
                <th>Corte</th>
-               <th>Información de la res</th>
+               <th>Opciones</th>
             </thead>
             <tbody>
                <ul>
@@ -66,7 +47,7 @@
                   <tr>
                   <td>{{p.id}}</td>
                   <td>{{p.parte}}</td>
-                  <td><a href = "{% url 'escanear_producto' %}" class= "btn btn-info">Ver información</a></td>
+                  <td><a href = # class= "btn btn-info">Editar</a></td>
                   </tr>
                   {% endfor%}
                </ul> 
@@ -74,6 +55,51 @@
          </table>
       </div>
    </div>
+
+   <div class = "form-group">
+      <a href="{% url 'escanear_producto' %}" class="btn btn-dark btn-block text-white"> Inspeccionar producto</a>
+
+   </div>  
+
+   <br/>
+   <br/>
+
+
+   <h3><strong>INFORMACIÓN DE RECES</strong></h3>
+      <div class = "table-responsive py-2 ">
+         <table class = "table table-striped" >
+            <caption> Productos...</caption>
+            <thead>
+               <th>Res ID</th>
+               <th>Proveniencia</th>
+               <th>Fecha nacimiento</th>
+               <th>Fecha sacrificio</th>
+            </thead>
+            <tbody>
+               <ul>
+                  {% for r in reces %}
+                  <tr>
+                  <td>{{r.id}}</td>
+                  <td>{{r.id_granja}}</td>
+                  <td>{{r.fecha_nacimiento}}</td>
+                  <td>{{r.fecha_muerte}}</td>
+                  <td><a href = # class= "btn btn-info">Editar</a></td>
+                  </tr>
+                  {% endfor%}
+               </ul> 
+            </tbody>
+         </table>
+      </div>
+   </div>
+
+
+   <div class = "form-group">
+      <a href="{% url 'escanear_producto' %}" class="btn btn-dark btn-block text-white"> Inspeccionar res</a>
+
+   </div>  
+
+   <br/>
+   <br/>
    
 
 

@@ -24,7 +24,7 @@ class Proveedor(models.Model):
     rol = models.CharField(max_length=25)
     
 class Res(models.Model):
-    id_granja = models.ForeignKey(User, on_delete=models.CASCADE)
+    id_granja = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
     fecha_nacimiento = models.DateField(default=datetime.date.today)
     fecha_muerte = models.DateField()
     peso = models.FloatField()
@@ -38,7 +38,7 @@ class Producto(models.Model):
     peso = models.FloatField()
 
 class Ficha_Recepcion(models.Model):
-    id_receptor = models.ForeignKey(User, on_delete=models.CASCADE)
+    id_receptor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
     id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     fecha_recepcion = models.DateField(default=datetime.date.today)
     direccion_recepcion = models.CharField(max_length=200)

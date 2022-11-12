@@ -5,7 +5,7 @@ from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import *
-from .form import CrearUsuarioForm
+
 
 # Create your views here.
 
@@ -24,23 +24,29 @@ def buscar_producto(request):
    return render(request, 'buscar_producto.html', {'productos':productos})
 
    
-   
+def home_secundario(request):
+   return render(request, "home_secundario.html")  
+
+def nosotros(request):
+   return render(request, "nosotros.html")   
+
 
    
 
 def escanear_producto(request):
    return render(request, "escanear_producto.html")
 
-def registro(request):
-  
-   form = UserCreationForm(request.POST)
+def gestion(request):
    
-   if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-           form.save()
-           
-           
-   context = {'form': form}     
-   return render(request, 'registro.html', context)
+   reces = Res.objects.all()
+   
+   #buscado =request.GET.get('search')
+   #if buscado:
+    #  productoBuscado = Producto.objects.filter(title__icontains=buscado)
+  
+   #return render(request, 'buscar_producto.html', {'productos':productos, 'buscado': buscado, 'productoBuscado': productoBuscado})
+   return render(request, 'gestion.html', {'reces':reces})
+
+
+
 
