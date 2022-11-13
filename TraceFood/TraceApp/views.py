@@ -28,9 +28,10 @@ def home_secundario(request):
    return render(request, "home_secundario.html")  
 
 def nosotros(request):
-   return render(request, "nosotros.html")   
+   return render(request, "nosotros.html") 
 
-
+def iniciar_sesion(request):
+   return render(request, "inicio-sesion.html")   
    
 
 def escanear_producto(request):

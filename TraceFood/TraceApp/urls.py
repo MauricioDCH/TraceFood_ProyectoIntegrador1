@@ -11,6 +11,7 @@ urlpatterns = [
    path('gestion/', views.gestion, name= 'gestion'),
    path('inicio/', views.home_secundario, name= 'inicio'),
    path('nosotros/', views.nosotros, name= 'nosotros'),
+   path('iniciar_sesion/', views.iniciar_sesion, name= 'iniciar_sesion'),
 
    
     
