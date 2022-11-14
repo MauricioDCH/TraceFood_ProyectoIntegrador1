@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %} Reses {% endblock %}
+
+{% block contenido %}    
+
+<h5><strong>INFORMACION DE PRODUCTOS</strong></h5> 
+<table class="table table-bordered table-hover" align="center" border="1" style="width:1000px; height:50px;">
+    <thead>
+        <tr>
+            <td>N° Productos</td>
+           
+            <td>ID</td>
+            <td>Corte</td>
+            <td>Estado</td>
+            <td>Peso</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in productos %}
+        <tr>
+            <td>{{p.id}}</td>
+            {% if not is_planta %}
+                <td>{{p.id_granja.nombre}}</td>
+            {% endif %}
+            <td>{{p.id}}</td>
+            <td>{{p.parte}}</td>
+            <td>{{p.estado}}</td>
+            <td>{{p.peso}}</td>
+            {% if is_plata %}
+                <td>
+                    <a href="{% url 'productoEdit' r.id %}" class="btn btn-info">Editar</a>
+                </td>
+            {% endif %}
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% if is_planta %}
+    <a href="{% url 'productoForm' p.id %}" class="btn btn-danger">Añadir producto</a>
+{% endif %}
+
+{% endblock %}
