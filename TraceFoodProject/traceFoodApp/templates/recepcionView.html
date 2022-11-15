@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %} Recibidos {% endblock %}
+
+{% block contenido %}    
+
+<h5><strong>RECIBIDOS (PRODUCTOS)</strong></h5> 
+<table class="table table-bordered table-hover" align="center" border="1" style="width:1000px; height:50px;">
+    <thead>
+        <tr>
+            <td>Identificacion</td>
+            <td>Receptor</td>
+            <td>N° Res</td>
+            <td>N° Producto</td>
+            <td>Fecha de recepción</td>
+            <td>Dirección de recepción</td>
+            <td>Temperatura</td>
+            <td>Estado del producto</td>
+            <td>Comentarios</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in fichas %}
+        <tr>
+            <td>{{f.id}}</td>
+            <td>{{f.id_receptor.nombre}}</td>
+            <td>{{f.id_res.id}}</td>
+            <td>{{f.id_producto.id}}</td>
+            <td>{{f.fecha_recepcion}}</td>
+            <td>{{f.direccion_recepcion}}</td>
+            <td>{{f.temperatura}}</td>
+            <td>{{f.estado}}</td>
+            <td>{{f.comentarios}}</td>
+            <td>
+                <a href="{% url 'recepcionEdit' f.id %}" class="btn btn-info">Editar</a>
+            </td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+
+<a href="{% url 'recepcionForm' usuario_id %}" class="btn btn-info">Añadir registro</a>
+
+{% endblock %}

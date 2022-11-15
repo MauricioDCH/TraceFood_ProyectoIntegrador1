@@ -1,54 +1,78 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aplicacion</title>
-        <link rel="stylesheet" href="https://bootswatch.com/5/materia/bootstrap.min.css">
-    </head>
-    <body>
-        <!-- barra de navegacion -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger"> 
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="/" style=" margin-right:5px; margin-left:5px;"> < </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="/" align="left" style=" margin-right:5px; margin-left:5px;"> Registro de reses </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <br>
-        <table class="table table-bordered table-hover" align="center" border="1" style="width:1200px; height:50px;">
+{% extends "base.html" %}
+
+{% block title %} Reses {% endblock %}
+
+{% block contenido %}    
+
+{% if is_granja %}
+    <h3><strong>MIS RESES</strong></h3>
+    <div class = "table-responsive py-2 ">
+        <table class = "table table-striped" >
             <thead>
-                <tr>
-                    <td>Identificacion</td>
-                    <td>Fecha de nacimiento</td>
-                    <td>Fecha de muerte</td>
-                    <td>Peso</td>
-                    <td>Estado</td>
-                </tr>
+                <th>N° Res</th>
+                <th>Fecha de nacimiento</th>
+                <th>Fecha de muerte</th>
+                <th>Peso</th>
+                <th>Estado</th>
+                <th>Opciones</th>
             </thead>
             <tbody>
-                {% for r in reses %}
-                <tr>
-                    <td>{{r.id}}</td>
-                    <td>{{r.fecha_nacimiento</td>
-                    <td>{{r.fecha_muerte}}</td>
-                    <td>{{r.peso}}</td>
-                    <td>{{r.estado}}</td>
-                    <td>
-                        <a href="{% url 'resesEdit' r.id %}" class="btn btn-info">Editar</a>
-                    </td>
-                </tr>
-                {% endfor%}
+                <ul>
+                    {% for r in mis_reses %}
+                        <tr>
+                                <td>{{r.id}}</td>
+                                <td>{{r.fecha_nacimiento}}</td>
+                                <td>{{r.fecha_muerte}}</td>
+                                <td>{{r.peso}}</td>
+                                <td>{{r.estado}}</td>
+                                <td>
+                                    <a href="{% url 'resesEdit' r.id %}" class="btn btn-info">Editar</a>
+                                </td>
+                            </tr>
+                    {% endfor%}
+                </ul>
             </tbody>
         </table>
-        <a href="{% url 'resesForm' %}" class="btn btn-info">Añadir res</a>
-    </body>
-</html>
+        <a href="{% url 'resesForm' usuario_id %}" class="btn btn-info">Añadir res</a>
+    </div>
+    <br>
+{% endif %}
+
+{% if is_granja %}
+<h3><strong>OTRAS RESES</strong></h3>
+{% endif %}
+
+{% if not is_granja %}
+<h3><strong>INFORMACION DE RESES</strong></h3>
+{% endif %}
+
+<div class = "table-responsive py-2 ">
+    <table class = "table table-striped" >
+        <thead>
+            <th>N° Res</th>
+            <th>Granja origen</th>
+            <th>Fecha de nacimiento</th>
+            <th>Fecha de muerte</th>
+            <th>Peso</th>
+            <th>Estado</th>
+        </thead>
+        <tbody>
+            <ul>
+                {% for r in reses %}
+                    {% if r.id_granja.id != usuario_id %}
+                        <tr>
+                            <td>{{r.id}}</td>
+                            <td>{{r.id_granja.nombre}}</td>
+                            <td>{{r.fecha_nacimiento}}</td>
+                            <td>{{r.fecha_muerte}}</td>
+                            <td>{{r.peso}}</td>
+                            <td>{{r.estado}}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor%}
+            </ul>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

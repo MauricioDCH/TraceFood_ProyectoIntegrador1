@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-    
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
         <title>TraceFood</title>
         <link rel="shortcut icon" href="\static\images\favicon.png"> 
         <link rel="stylesheet" href="https://bootswatch.com/5/materia/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     </head>
 
     <body>
@@ -23,29 +24,20 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href= "{% url 'home' %}">Home
-                                <span class="visually-hidden">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'perfil' usuario_id %}">Mi Perfil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'resesView' usuario_id %}">Reses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'productoView' usuario_id %}">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'proveedorView' usuario_id %}">Proveedores</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'recepcionView' usuario_id %}">Fichas de recepcion</a>
-                        </li>                                              
-                        <a class="nav-link" href="{% url 'home' %}">
-                            <img src='..\static\images\cerrar-sesion.png' onclick="alert('Su sesion se cerró correctamente')" width="20" height="20" style="float:right">
+                        <a class="nav-link active" href= "{% url 'home' %}">Inicio
+                            <span class="visually-hidden">(current)</span>
                         </a>
-                        
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://wa.me/3153965553?text=¡Estoy+interesado!">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'buscar_producto' %}">Productos</a>
+                        </li>
+                    
                     </ul>
                 </div>
             </div>

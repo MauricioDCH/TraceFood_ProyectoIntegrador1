@@ -14,7 +14,7 @@ class Proveedor(models.Model):
     pais = models.CharField(max_length=50)
     certificaciones = models.CharField(max_length=250)
     rol = models.CharField(max_length=25)
-    usuario = models.CharField(max_length=20, default="a")
+    usuario = models.CharField(max_length=20, default=correo)
     contrasena = models.CharField(max_length=15, default="12345")
     
 class Res(models.Model):
@@ -26,6 +26,7 @@ class Res(models.Model):
 
 class Producto(models.Model):
     id_res = models.ForeignKey(Res, on_delete=models.CASCADE)
+    id_planta = models.ForeignKey(Proveedor, on_delete=models.CASCADE, default="0")
     parte = models.CharField(max_length=50)
     codigo_qr = models.ImageField() #upload_to='movie/images/'
     estado = models.CharField(max_length=50)

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Proveedores {% endblock %}
+
+{% block contenido %}    
+
+<h5><strong>MI PERFIL</strong></h5>
+<div class = "table-responsive py-2 ">
+    <table class = "table table-striped" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Numero NIT</th>
+                <th>Rol</th>
+                <th>Correo</th>
+                <th>Número</th>
+                <th>Direccion</th>
+                <th>Municipio</th>
+                <th>Departamento</th>
+                <th>Pais</th>
+                <th>Certificaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ul>
+                <tr>
+                    <td>{{p.id}}</td>
+                    <td>{{p.nombre}}</td>
+                    <td>{{p.nit}}</td>
+                    <td>{{p.rol}}</td>
+                    <td>{{p.correo}}</td>
+                    <td>{{p.numero_contacto}}</td>
+                    <td>{{p.direccion}}</td>
+                    <td>{{p.municipio}}</td>
+                    <td>{{p.departamento}}</td>
+                    <td>{{p.pais}}</td>
+                    <td>{{p.certificaciones}}</td>
+                </tr>
+            </ul>
+        </tbody>
+    </table>
+    <a href="{% url 'proveedorEdit' usuario_id %}" class="btn btn-info">Editar</a>
+</div>
+
+{% endblock %}

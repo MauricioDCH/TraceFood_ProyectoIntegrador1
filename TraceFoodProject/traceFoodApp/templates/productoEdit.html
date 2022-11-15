@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} Productos {% endblock %}
+
+{% block contenido %}
+
+<h5><strong>ACTUALIZAR INFORMACION DE PRODUCTOS</strong></h5> 
+<table class="table table-bordered table-hover" align="center" border="1" style="width:1000px; height:50px; margin-top:5px;" bgcolor="#EDEDED">
+    <thead></thead>
+    <tbody>
+        <tr>
+            <td><form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="parte" class="form-label mt-4">Corte (Parte de la res)</label>
+                    <input type="text" name="parte" id="parte" value="{{producto.parte}}" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="estado" class="form-label mt-4">Estado</label>
+                    <input type="text" name="estado" id="estado" value="{{producto.estado}}" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="peso" class="form-label mt-4">Peso</label>
+                    <input type="number" name="peso" id="peso" value="{{producto.peso}}" class="form-control">
+                </div>
+                <br>
+                <input type="submit" value="Guardar" class="btn btn-primary">
+                <input type="reset" value="Cancelar" class="btn btn-danger">
+            </form></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

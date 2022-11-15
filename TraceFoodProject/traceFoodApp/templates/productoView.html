@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block contenido %}
+
+<div class = "row">
+    <div class = "col-sm-12 col-md-6 col-lg-8 col-xl-8 ">
+
+      <div class = "container">
+        <form action = "">
+            <div class="mb-3">
+              <label for="search" class="form-label">
+               </label>
+              <input type="text" class="form-control" placeholder = "Digite el código de su producto" name="search" >
+              <br/>
+              <button type="submit" class="btn btn-dark btn-block text-white">Buscar </button>
+            </div>
+      
+            
+         </form> 
+
+         <br/>
+      <h3><strong>INFORMACIÓN DE PRODUCTOS</strong></h3>
+      <div class = "table-responsive py-2 ">
+         <table class = "table table-striped" >
+            <caption> Productos...</caption>
+            <thead>
+                <th>Producto ID</th>
+                {% if not is_planta %}
+                    <th>Planta de desposte</th>
+                {% endif %}
+               <th>Corte</th>
+               <th>Peso</th>
+               <th>Estado</th>
+               <th>Opciones</th>
+            </thead>
+            <tbody>
+               <ul>
+                  {% for p in productos %}
+                  <tr>
+                    <td>{{p.id}}</td>
+                    {% if not is_planta %}
+                        <td>{{p.id_planta.nombre}}</td>
+                    {% endif %}
+                    <td>{{p.parte}}</td>
+                    <td>{{p.peso}}</td>
+                    <td>{{p.estado}}</td>
+                    {% if is_planta %}
+                        <td>
+                            <a href="{% url 'productoEdit' p.id %}" class="btn btn-info">Editar</a>
+                        </td>
+                    {% endif %}
+                </tr>
+                  {% endfor%}
+               </ul> 
+            </tbody>
+         </table>
+        {% if is_planta %}
+            <a href="{% url 'productoForm' usuario_id %}" class="btn btn-danger">Añadir producto</a>
+        {% endif %}
+      </div>
+   </div>
+
+   <div class = "form-group">
+      <a href="{% url 'escanear_productoR' usuario_id %}" class="btn btn-dark btn-block text-white"> Inspeccionar producto</a>
+
+   </div>
+   <br/>
+   <br/>
+</div>
+{% endblock %}

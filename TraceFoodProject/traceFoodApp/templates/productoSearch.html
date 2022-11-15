@@ -1,0 +1,58 @@
+{% extends "baseConsumidor.html" %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block contenido %}
+
+<div class = "row">
+   <div class = "col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+   <h5><strong>BUSCAR POR QR</strong></h5> 
+      <div class ="card">
+         <div class= "card-body">
+            <form action="" method = "POST">              
+               <img src="img/vaquita.jpg" alt="">
+               <img class="card-img-top"  src= './vaquita.jpg' />
+               <div class = "form-group">
+                  <a href="{% url 'escanear_producto' %}" class="btn btn-dark btn-block text-white"> Escanear</a>
+               </div>  
+            </form> 
+         </div>
+      </div>   
+   </div>
+   <div class = "col-sm-12 col-md-6 col-lg-8 col-xl-8 ">
+      <div class = "container">
+         <form action = "">
+            <div class="mb-3">
+              <label for="search" class="form-label">
+               </label>
+              <input type="text" class="form-control" placeholder = "Digite el código de su producto" name="search" >
+              <br/>
+              <button type="submit" class="btn btn-dark btn-block text-white">Buscar </button>
+            </div>
+         </form>
+         <br/>
+      <h3><strong>PRODUCTOS</strong></h3>
+      <div class = "table-responsive py-2 ">
+         <table class = "table table-striped" >
+            <caption> Productos...</caption>
+            <thead>
+               <th>Producto ID</th>
+               <th>Corte</th>
+               <th>Información de la res</th>
+            </thead>
+            <tbody>
+               <ul>
+                  {% for p in productos %}
+                  <tr>
+                  <td>{{p.id}}</td>
+                  <td>{{p.parte}}</td>
+                  <td><a href = "{% url 'escanear_producto' %}" class= "btn btn-info">Ver información</a></td>
+                  </tr>
+                  {% endfor%}
+               </ul> 
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>
+{% endblock %}

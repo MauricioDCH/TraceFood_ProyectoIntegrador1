@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %} Proveedores {% endblock %}
+
+{% block contenido %}    
+
+<h5><strong>PROVEEDORES</strong></h5> 
+<div class="text-box">
+    <h1></h1>
+</div>
+<table class="table table-bordered table-hover" align="center" border="1" style="width:1000px; height:50px;">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Numero NIT</td>
+            <td>Rol</td>
+            <td>Correo</td>
+            <td>Número</td>
+            <td>Municipio</td>
+            <td>Certificaciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in proveedor %}
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.nombre}}</td>
+            <td>{{p.nit}}</td>
+            <td>{{p.rol}}</td>
+            <td>{{p.correo}}</td>
+            <td>{{p.numero_contacto}}</td>
+            <td>{{p.municipio}}</td>
+            <td>{{p.certificaciones}}</td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+
+{% endblock %}

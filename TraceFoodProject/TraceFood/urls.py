@@ -22,11 +22,27 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('res/', traceFoodAppViews.resesView),
+    path('', traceFoodAppViews.home , name= 'home'), 
+    path('inicio/', traceFoodAppViews.home_secundario, name= 'inicio'),
+    path('nosotros/', traceFoodAppViews.nosotros, name= 'nosotros'),
+    path('productos/', traceFoodAppViews.productoSearch, name='buscar_producto'),
+    path('escanear/', traceFoodAppViews.escanear, name='escanear_producto'), 
+    path('login/', traceFoodAppViews.login , name= 'login'),
+    path('gestion/<usuario_id>', traceFoodAppViews.gestion, name= 'gestion'),
+    path('perfil/<usuario_id>', traceFoodAppViews.perfilView , name= 'perfil'),  
+    path('escanear/<usuario_id>', traceFoodAppViews.escanear_productoR, name='escanear_productoR'), 
+    path('producto/<usuario_id>', traceFoodAppViews.productoView, name='productoView'),
+    path('productoEdit/<producto_id>', traceFoodAppViews.productoEdit, name='productoEdit'),
+    path('productoForm/<usuario_id>', traceFoodAppViews.productoForm, name='productoForm'),
+    path('res/<usuario_id>', traceFoodAppViews.resesView, name= 'resesView'),
     path('resEdit/<res_id>', traceFoodAppViews.resesEdit, name= 'resesEdit'),
-    path('resForm/', traceFoodAppViews.resesForm, name= 'resesForm'),
-    path('proveedor/', traceFoodAppViews.proveedorForm),
-    path('recepcion/', traceFoodAppViews.recepcionForm),
+    path('resForm/<usuario_id>', traceFoodAppViews.resesForm, name= 'resesForm'),
+    path('proveedor/<usuario_id>', traceFoodAppViews.proveedorView, name='proveedorView'),
+    path('proveedorForm/', traceFoodAppViews.proveedorForm, name='proveedorForm'),
+    path('proveedorEdit/<usuario_id>', traceFoodAppViews.proveedorEdit, name='proveedorEdit'),
+    path('recepcion/<usuario_id>', traceFoodAppViews.recepcionView, name='recepcionView'),
+    path('recepcionForm/<usuario_id>', traceFoodAppViews.recepcionForm, name='recepcionForm'),
+    path('recepcionEdit/<ficha_id>', traceFoodAppViews.recepcionEdit, name='recepcionEdit'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
